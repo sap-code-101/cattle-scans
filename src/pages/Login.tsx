@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from "react"
 import { supabase } from "../lib/supabase"
 import { useAuth } from "../hooks/useAuth"
-import { LogIn, LogOut, LogOutIcon } from "lucide-react"
+import { LogIn, LogOutIcon } from "lucide-react"
 import { toast } from "sonner"
 
 export default function Login() {
@@ -98,7 +98,8 @@ export default function Login() {
     return (
       <div className="flex flex-col items-center justify-center min-h-screen ">
         <div className="bg-white shadow-lg rounded-2xl p-8 w-96 text-center">
-          <h1 className="text-2xl font-bold  mb-10">✅ Logged in!</h1>
+          <h1 className="text-2xl font-bold mb-4">✅ Logged in!</h1>
+          <h2 className="font-semibold mb-6">BPA ID: {session.user.user_metadata.id}</h2>
           <button
             onClick={signOut}
             className="w-full border border-gray-200 hover:bg-gray-100 flex items-center justify-center font-semibold text-black py-2 rounded-lg hover:cursor-pointer transition"
